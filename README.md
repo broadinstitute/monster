@@ -5,7 +5,7 @@
 ## People
 
 | Name | Role | GitHub |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- |
 | Ben Carlin | Software Engineer | @benjamincarlin |
 | Dan Moran | Tech Lead | @danxmoran |
 | Emily Munro-Ludders | Scrum Master | |
