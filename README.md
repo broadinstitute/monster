@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | Ben Carlin | Software Engineer | @benjamincarlin |
 | Dan Moran | Tech Lead | @danxmoran |
-| Emily Munro-Ludders | Scrum Master | |
+| Emily Munro-Ludders | Scrum Master | @emunrolu |
 | Jeff Korte | Product Owner | @JeffKorte |
 | Kathy Reinold | Data Modeler | @kreinold |
 
