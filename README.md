@@ -37,6 +37,7 @@ ETL workflows and infrastructure for moving data into the [Jade Data Repository]
 #### GitHub repos
 * [Transporter](https://github.com/databiosphere/transporter) - Bulk file-transfer system
 * [Transporter Deploy](https://github.com/broadinstitute/transporter-deploy) - Kubernetes configuration for deploying Transporter
+* [Kafka Deploy](https://github.com/broadinstitute/emerald-kubernetes-kafka) - Kubernetes configuration for deploying Kafka & Zookeeper
 * [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest
 * [GDR Ingest](https://github.com/broadinstitute/gdr-ingest) - Initial experiments at ingesting ENCODE data (archived)
 
