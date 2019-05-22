@@ -26,6 +26,7 @@ Linked Data definitions for the DSP Core Data Model, with:
 
 #### GitHub repos
 * [DSP Data Models](https://github.com/broadinstitute/dsp-data-models) - Data Model definitions with corresponding schemas
+* [OLS Docker](https://github.com/broadinstitute/ols-docker) - Dockerization of EBI's Ontology Lookup Service, configured to use ontologies we care about
 
 ### Data Ingest
 ETL workflows and infrastructure for moving data into the [Jade Data Repository](https://github.com/databiosphere/jade-data-repo).
@@ -34,7 +35,7 @@ ETL workflows and infrastructure for moving data into the [Jade Data Repository]
 * [Google Docs](https://drive.google.com/drive/folders/1LjtBbMZs5-FqTGcRjw80ZBlHhfd_LT2z)
 
 #### GitHub repos
-* [Transporter](https://github.com/databiosphere/transporter) - bulk file-transfer system
+* [Transporter](https://github.com/databiosphere/transporter) - Bulk file-transfer system
 * [Transporter Deploy](https://github.com/broadinstitute/transporter-deploy) - Kubernetes configuration for deploying Transporter
 * [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest
 * [GDR Ingest](https://github.com/broadinstitute/gdr-ingest) - Initial experiments at ingesting ENCODE data (archived)
