@@ -12,6 +12,11 @@
 | Jeff Korte | Product Owner | @JeffKorte |
 | Kathy Reinold | Data Modeler | @kreinold |
 
+## GitHub Teams
+* [DSP Monsters](https://github.com/orgs/broadinstitute/teams/dsp-monsters) - Team for repositories under the `broadinstitute` org
+* [Emerald Writers](https://github.com/orgs/DataBiosphere/teams/broademeraldwrite) - Team for repositories under the `DataBiosphere` org
+* [Broad Pipeline Developers](https://github.com/orgs/BICCN/teams/broad-pipeline-developers) - Team for repositories under the `BICCN` org
+
 ## Projects
 
 ### Data Modeling
@@ -29,7 +34,10 @@ Linked Data definitions for the DSP Core Data Model, with:
 * [OLS Docker](https://github.com/broadinstitute/ols-docker) - Dockerization of EBI's Ontology Lookup Service, configured to use ontologies we care about
 
 ### Data Ingest
-ETL workflows and infrastructure for moving data into the [Jade Data Repository](https://github.com/databiosphere/jade-data-repo).
+Infrastructure for moving data into the [Jade Data Repository](https://github.com/databiosphere/jade-data-repo), including:
+* Bulk file transfer
+* ETL workflows for tabular data
+* Deployment infrastructure
 
 #### Documentation
 * [Google Docs](https://drive.google.com/drive/folders/1LjtBbMZs5-FqTGcRjw80ZBlHhfd_LT2z)
