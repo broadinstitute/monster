@@ -44,10 +44,10 @@ Infrastructure for moving data into the [Jade Data Repository](https://github.co
 
 #### GitHub repos
 * [Transporter](https://github.com/databiosphere/transporter) - Bulk file-transfer system
-* [Transporter Deploy](https://github.com/broadinstitute/transporter-deploy) - Kubernetes configuration for deploying Transporter
-* [Kafka Deploy](https://github.com/broadinstitute/emerald-kubernetes-kafka) - Kubernetes configuration for deploying Kafka & Zookeeper
+* [Ingest Deploy](https://github.com/broadinstitute/dsp-ingest-deploy) - Terraform and Kubernetes configuration for deploying ingest components into GCP
 * [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest
 * [GDR Ingest](https://github.com/broadinstitute/gdr-ingest) - Initial experiments at ingesting ENCODE data (archived)
+* [Kafka Deploy](https://github.com/broadinstitute/emerald-kubernetes-kafka) - Initial experiments at managing Kafka and Zookeeper in Kubernetes (archived)
 
 ### BRAIN Initiative
 Scientific pipelines and infrastructure for processing BRAIN data in [Terra](https://app.terra.bio).
