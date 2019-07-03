@@ -11,6 +11,7 @@
 | Emily Munro-Ludders | Scrum Master | @emunrolu |
 | Jeff Korte | Product Owner | @JeffKorte |
 | Kathy Reinold | Data Modeler | @kreinold |
+| Raaid Arshad | Software Engineer | @raaidbroad |
 
 ## GitHub Teams
 * [DSP Monsters](https://github.com/orgs/broadinstitute/teams/dsp-monsters) - Team for repositories under the `broadinstitute` org
