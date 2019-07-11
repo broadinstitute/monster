@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+declare -ra GITHUB_REPOS=(
+  broadinstitute/dsp-data-models
+  broadinstitute/dsp-ingest-deploy
+  broadinstitute/monster
+  broadinstitute/monster-etl
+  broadinstitute/monster-storage-libs
+  DataBiosphere/transporter
+)
+
+function test_ssh () {
+  grep "You've successfully authenticated" <(2>&1 ssh -T git@github.com || true) > /dev/null
+}
+
+function clone_repo () {
+  local -r repository=$1 parent_dir=$2
+  local -r expected_dir=${parent_dir}/$(basename ${repository})
+
+  if [ -d ${expected_dir} ]; then
+    if [ -d ${expected_dir}/.git ]; then
+      1>&2 echo git repository already checked out at ${expected_dir}. Skipping ${repository}
+    else
+      1>&2 echo WARNING: ${expected_dir} exists, but is not a git repository. Skipping ${repository}
+    fi
+  else
+    1>&2 echo Cloning ${repository}...
+    git clone git@github.com:${repository}.git ${expected_dir}
+  fi
+}
+
+function main () {
+  if [ $# -ne 1 ]; then
+    echo 1>&2 Usage: $0 '<parent-directory>'
+    exit 1
+  fi
+
+  test_ssh
+  for repo in ${GITHUB_REPOS[@]}; do
+    clone_repo ${repo} $1
+  done
+}
+
+main ${@}
