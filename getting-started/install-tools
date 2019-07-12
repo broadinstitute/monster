@@ -12,6 +12,10 @@ declare -ra HOMEBREW_CASKS=(
   docker
   # Utility that can prevent your Mac from entering sleep mode
   keepingyouawake
+  # Installation manager for Jetbrains IDEs
+  jetbrains-toolbox
+  # Lightweight editor for when a full IDE is overkill
+  visual-studio-code
 )
 
 declare -ra HOMEBREW_FORMULAE=(
@@ -56,6 +60,13 @@ declare -ra HOMEBREW_SERVICES=(
 )
 
 declare -r GCLOUD_INSTALL_LOCATION=${HOME}/.google-cloud-sdk
+
+function check_osx () {
+  if [ "$(uname)" != Darwin ]; then
+    1>&2 echo This script only works on OS X, sorry!
+    exit 1
+  fi
+}
 
 function install_homebrew () {
   if ! which brew > /dev/null; then
@@ -177,6 +188,7 @@ function log_in () {
 }
 
 function main () {
+  check_osx
   install_homebrew
   tap_homebrew_repos
   install_homebrew_casks

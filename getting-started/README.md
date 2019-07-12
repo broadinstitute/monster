@@ -47,19 +47,32 @@ Once you've been synced into BITS' nightly job, you should be able to link into
 other relevant organizations / groups / teams.
 
 ### Slack Channels
-Join these channels to avoid missing any important updates:
+
+#### Main Channels
+Join these channels for sure:
 * `#105b` (building / facilities)
 * `#dsde-emeraldempire` (Data Engineering)
 * `#dsp-engineering`
 * `#monster-internal` (Private to Monster, ask a teammate to add you)
 * `#prometheus` (DSP-wide)
 
-These channels might also be useful for tech topics:
+#### Tech Topics
+You might find these channels useful for tech discussions:
 * `#beam-dataflow`
 * `#kubernetes`
 * `#scala`
 * `#softeng`
 * `#terraform-ansible`
+
+#### Other Emerald Teams
+Join some or all of these to keep tabs on other groups in Data Eng:
+* `#dsde-ops` (Private; Genomics Platform operations)
+* `#dsp-jade` (Data repository)
+* `#green-hornet` (Genomics Platform & HCA infrastructure)
+* `#green-lantern` (Genomics Platform & HCA scientific pipelines)
+* `#wintergreen` (Private; Epigenomics Program pipelines and infrastructure)
+
+`#dsp-jade` is the most relevant for now.
 
 ### GitHub Teams
 Our GitHub repositories are spread across a few organizations.
@@ -82,6 +95,13 @@ member of these teams:
 We host containers for our open-source services in DockerHub. Go [here](https://hub.docker.com/)
 to set up an account. Once it's set up, ask the Tech Lead to get you added to the `broadinstitute`
 organization and DSDE team within.
+
+### Quay.io
+Our workloads can cause scalability issues in DockerHub by concurrently pulling a large
+number of images. To avoid hitting this problem, we sometimes choose to host at-risk images
+(usually containing command-line programs for scientific workflows) in [Quay](https://quay.io).
+Set up an account, and ask the Tech Lead to get you added to the `broadinstitute` organization
+and the Monster team within.
 
 ### Terra
 [Terra](https://terra.bio/) is DSP's flagship product for biomedical research in the cloud.
@@ -108,19 +128,53 @@ so you can interact with the systems directly when needed.
    * [Data Repository Stewards](https://bvdp-saturn-dev.appspot.com/#groups/JadeStewards-dev)
    * [Data Repository Custodians](https://bvdp-saturn-dev.appspot.com/#groups/JadeCustodians-dev)
 
+### AWS
+We maintain a space in AWS for testing our file-transfer systems. The need is uncommon
+enough across DSP that DevOps hasn't set up an automated process for acquiring an account,
+so work with the Tech Lead to get into the system.
+
+Once you have an account, follow these steps to set up local credentials:
+1. Find yourself in the [list of users](https://console.aws.amazon.com/iam/home?region=us-east-1#/users),
+   and click the link for your username.
+2. Select the "Security Credentials" page.
+3. Click "Create access key" to generate a new key ID / secret pair. Copy the secret
+   key (or download the CSV).
+4. Add your credentials to your local bash environment. To avoid accidentally sharing the secrets,
+   we recommend you store them in their own file and then `source` them into your profile:
+   ```bash
+   # Write config to disk.
+   mkdir -p ~/.config/aws
+   /bin/cat <-EOF > ~/.config/aws/env
+   export AWS_ACCESS_KEY_ID=<your-key-id>
+   export AWS_SECRET_ACCESS_KEY=<your-secret>
+   EOF
+
+   # Load configs into your profile.
+   echo "source '${HOME}/.config/aws'" >> ~/.bash_profile
+   ```
+
 ## Install Software
-Run [this script](./install-tools) to install all the software we use for development. It isn't
-fully automated (a few steps require confirmation / entering a login), but it should grab everything
-you need for development work.
+If you're running OS X, run [this script](./install-tools) to install all the software we use for
+development. It isn't fully automated (a few steps require confirmation / entering a login), but
+it should grab everything you need for development work.
+
+If you aren't running OS X, I'm sorry.
 
 Other things to note:
 * After running the installation script, you'll need to manually start the
-  Docker and KeepingYouAwake applications. Both should insert icons into the
-  OS X status bar (top-right corner).
+  cask applications (OS X will ask you to verify that you trust the installations).
 * If you prefer to use Firefox over Chrome, make sure to install the
   [ESR version](https://www.mozilla.org/en-US/firefox/organizations/all/?q=engli). BITS'
   security scanners are generally lax about what users set up on their machines, but for
   some reason they've decided to blacklist non-ESR FF.
+
+### IntelliJ
+Once you've installed the JetBrains Toolbox, you can use it to install IntelliJ.
+1. Click the Toolbox's icon in the status bar (upper right-hand corner).
+   ![Toolbox icon](./toolbox-icon.png)
+2. Find "IntelliJ IDEA Community" in the list of available IDEs, and click "Install".
+3. After the installation completes, open the app and work through the initial setup
+   dialogs. When asked, make sure to select the "Scala" plugin for installation.
 
 ## Set up Vault
 [Vault](https://www.vaultproject.io/) is our preferred solution for securely storing / sharing
