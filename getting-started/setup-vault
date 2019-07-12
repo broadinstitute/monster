@@ -3,21 +3,13 @@ set -euo pipefail
 
 declare -r PROFILE=${HOME}/.bash_profile
 
-function ssed () {
-  if [ "$(uname)" = Darwin ]; then
-    sed -i '' ${@}
-  else
-    sed -i ${@}
-  fi
-}
-
 function write_vault_address () {
   local -ra export_command=(export VAULT_ADDR=https://clotho.broadinstitute.org:8200)
   local -r export_def="${export_command[*]}"
 
   1>&2 echo Registering Vault server\'s address...
   if grep 'export VAULT_ADDR=' ${PROFILE} > /dev/null; then
-    ssed "s#export VAULT_ADDR=.*#${export_def}#g" ${PROFILE}
+    sed -i '' "s#export VAULT_ADDR=.*#${export_def}#g" ${PROFILE}
   else
     echo "${export_def}" >> ${PROFILE}
   fi
@@ -31,7 +23,7 @@ function write_vault_reauth () {
 
   1>&2 echo Registering vault-reauth alias...
   if grep 'alias vault-reauth=' ${PROFILE} > /dev/null; then
-    ssed "s#alias vault-reauth=.*#${alias_def}#g" ${PROFILE}
+    sed -i '' "s#alias vault-reauth=.*#${alias_def}#g" ${PROFILE}
   else
     echo "${alias_def}" >> ${PROFILE}
   fi
