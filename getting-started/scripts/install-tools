@@ -1,0 +1,202 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+declare -ra HOMEBREW_REPOSITORIES=(
+  AdoptOpenJDK/openjdk
+)
+
+declare -ra HOMEBREW_CASKS=(
+  # Java that won't sue us
+  adoptopenjdk8
+  # Community Edition
+  docker
+  # Utility that can prevent your Mac from entering sleep mode
+  keepingyouawake
+  # Installation manager for Jetbrains IDEs
+  jetbrains-toolbox
+  # Lightweight editor for when a full IDE is overkill
+  visual-studio-code
+)
+
+declare -ra HOMEBREW_FORMULAE=(
+  # Version Control
+  git
+  git-lfs
+  git-secrets
+  # Build tools
+  gradle
+  sbt
+  # Languages
+  python
+  python@2
+  # Utilities
+  grep
+  htop
+  jq
+  parallel
+  vault
+  wget
+  # Dev services
+  kafka
+  liquibase
+  postgresql@9.6
+  # Bash helpers
+  bash-completion@2
+  bash-git-prompt
+  docker-completion
+  docker-compose-completion
+  docker-machine-completion
+  # Humor
+  cowsay
+  fortune
+  sl
+  thefuck
+)
+
+declare -ra HOMEBREW_SERVICES=(
+  postgresql@9.6
+  kafka
+  zookeeper
+)
+
+declare -r GCLOUD_INSTALL_LOCATION=${HOME}/.google-cloud-sdk
+
+function check_osx () {
+  if [ "$(uname)" != Darwin ]; then
+    1>&2 echo This script only works on OS X, sorry!
+    exit 1
+  fi
+}
+
+function install_homebrew () {
+  if ! which brew > /dev/null; then
+    1>&2 echo Installing XCode utils and Homebrew...
+    xcode-select --install
+    /usr/bin/ruby -e \
+      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    brew update
+  fi
+}
+
+function tap_homebrew_repos () {
+  1>&2 echo Tapping Homebrew repositories...
+  for repo in ${HOMEBREW_REPOSITORIES[@]}; do
+    HOMEBREW_NO_AUTO_UPDATE=1 brew tap ${repo}
+  done
+}
+
+function homebrew_install_or_upgrade () {
+  local -r name=$1 is_cask=$2
+  local -a brew_cmd
+
+  if $(${is_cask}); then
+    brew_cmd=(brew cask)
+  else
+    brew_cmd=(brew)
+  fi
+
+  # NOTE: This is *much* slower than using Homebrew's batch commands,
+  # but brew doens't provide idempotent versions of 'install' or 'upgrade'
+  # and it'd be way too compliated to do a batch list + diff into separate
+  # install/upgrade/do-nothing lists.
+  if HOMEBREW_NO_AUTO_UPDATE=1 ${brew_cmd[@]} ls --versions ${name} > /dev/null; then
+    1>&2 echo Upgrading ${name} to latest version...
+    HOMEBREW_NO_AUTO_UPDATE=1 ${brew_cmd[@]} upgrade ${name} || \
+      1>&2 echo Nothing to 'do' 'for' ${name}
+  else
+    1>&2 echo Installing ${name}...
+    HOMEBREW_NO_AUTO_UPDATE=1 ${brew_cmd[@]} install ${name}
+  fi
+}
+
+function install_homebrew_casks () {
+  1>&2 echo Installing Homebrew casks '('native OS X apps')'...
+  for cask in ${HOMEBREW_CASKS[@]}; do
+    homebrew_install_or_upgrade ${cask} true
+  done
+}
+
+function install_homebrew_fomulae () {
+  1>&2 echo Installing Homebrew fomulae...
+  for formula in ${HOMEBREW_FORMULAE[@]}; do
+    homebrew_install_or_upgrade ${formula} false
+  done
+}
+
+function rewrite_settings () {
+  local -ra sbt_patch_command=(
+    sed -i ''
+    's/#-mem.*/-mem 8192/g'
+    /usr/local/etc/sbtopts
+  )
+
+  local -ra kafka_patch_command=(
+    sed -i ''
+    's$#listeners=PLAINTEXT://:9092$listeners=PLAINTEXT://localhost:9092$g'
+    /usr/local/etc/kafka/server.properties
+  )
+
+  1>&2 echo Patching Homebrew\'s default configs...
+  1>&2 echo Running "'${sbt_patch_command[*]}'" to bump sbt\'s default memory...
+  "${sbt_patch_command[@]}"
+  1>&2 echo Running "'${kafka_patch_command[*]}'" to point Kafka at localhost...
+  "${kafka_patch_command[@]}"
+}
+
+function restart_homebrew_services () {
+  1>&2 echo '('re')'Starting Homebrew-based services...
+  for service in ${HOMEBREW_SERVICES[@]}; do
+    brew services restart ${service}
+  done
+}
+
+function install_gcloud_sdk () {
+  if ! which gcloud > /dev/null; then
+    1>&2 echo Installing Google Cloud SDK to ${GCLOUD_INSTALL_LOCATION}...
+    mkdir -p ${GCLOUD_INSTALL_LOCATION}
+    curl -sL https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-253.0.0-darwin-x86_64.tar.gz | \
+      tar xzf - --directory ${GCLOUD_INSTALL_LOCATION} && \
+      ${GCLOUD_INSTALL_LOCATION}/install.sh
+  else
+    1>&2 echo Updating gcloud...
+    gcloud components update
+  fi
+
+  local -r kubectl_path="$(which kubectl)"
+  if [[ ! "$kubectl_path" =~ ^${GCLOUD_INSTALL_LOCATION}.* ]]; then
+    1>&2 echo Installing gcloud-based k8s CLI...
+    gcloud components install kubectl
+  fi
+}
+
+function log_in () {
+  1>&2 echo Logging into DockerHub...
+  docker login
+
+  if ! grep "$(whoami)" <(gcloud auth list 2>/dev/null) > /dev/null; then
+    1>&2 echo Logging into Google...
+    1>&2 echo When asked, choose "'broad-dsp-monster-dev'" as your default project
+    1>&2 echo and "'us-central1-c'" as your default compute zone.
+    gcloud init
+  fi
+
+  if ! grep gcloud ${HOME}/.docker/config.json > /dev/null; then
+    1>&2 echo Connecting Google to Docker...
+    gcloud auth configure-docker
+  fi
+}
+
+function main () {
+  check_osx
+  install_homebrew
+  tap_homebrew_repos
+  install_homebrew_casks
+  install_homebrew_fomulae
+  rewrite_settings
+  restart_homebrew_services
+  install_gcloud_sdk
+  log_in
+}
+
+main

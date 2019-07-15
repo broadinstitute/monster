@@ -2,6 +2,8 @@
 [![Monster Slack](https://img.shields.io/badge/Slack%20Channel-%23monster-blue.svg?style=flat)](https://broadinstitute.slack.com/messages/CCAU5L6LV/)
 [![Monster CI Slack](https://img.shields.io/badge/Slack%20Channel-%23monster--ci-blue.svg?style=flat)](https://broadinstitute.slack.com/messages/CFXEDUUP5/)
 
+New to the team? [Start here](./getting-started/README.md).
+
 ## People
 
 | Name | Role | GitHub |

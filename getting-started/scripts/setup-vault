@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+declare -r PROFILE=${HOME}/.bash_profile
+
+function write_vault_address () {
+  local -ra export_command=(export VAULT_ADDR=https://clotho.broadinstitute.org:8200)
+  local -r export_def="${export_command[*]}"
+
+  1>&2 echo Registering Vault server\'s address...
+  if grep 'export VAULT_ADDR=' ${PROFILE} > /dev/null; then
+    sed -i '' "s#export VAULT_ADDR=.*#${export_def}#g" ${PROFILE}
+  else
+    echo "${export_def}" >> ${PROFILE}
+  fi
+  "${export_command[@]}"
+}
+
+function write_vault_reauth () {
+  local -r github_token_path=$1
+  local -ra reauth_command=(vault login -method=github)
+  local -r alias_def="alias vault-reauth='${reauth_command[*]} token=\$(/bin/cat ${github_token_path})'"
+
+  1>&2 echo Registering vault-reauth alias...
+  if grep 'alias vault-reauth=' ${PROFILE} > /dev/null; then
+    sed -i '' "s#alias vault-reauth=.*#${alias_def}#g" ${PROFILE}
+  else
+    echo "${alias_def}" >> ${PROFILE}
+  fi
+
+  1>&2 echo '('re')'Authenticating...
+  "${reauth_command[@]}" token=$(/bin/cat ${github_token_path})
+}
+
+function main {
+  if [ $# -ne 1 ]; then
+    1>&2 echo Usage: $0 '<vault-github-token-path>'
+    exit 1
+  fi
+
+  write_vault_address
+  write_vault_reauth $1
+}
+
+main ${@}
