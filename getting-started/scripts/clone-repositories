@@ -6,6 +6,7 @@ declare -ra GITHUB_REPOS=(
   broadinstitute/dsp-ingest-deploy
   broadinstitute/monster
   broadinstitute/monster-etl
+  broadinstitute/monster-extractors
   broadinstitute/monster-storage-libs
   DataBiosphere/transporter
 )

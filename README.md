@@ -50,6 +50,7 @@ Infrastructure for moving data into the [Jade Data Repository](https://github.co
 * [Ingest Deploy](https://github.com/broadinstitute/dsp-ingest-deploy) - Terraform and Kubernetes configuration for deploying ingest components into GCP
 * [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest
 * [Storage Libs](https://github.com/broadinstitute/monster-storage-libs) - Utility libraries for I/O against external storage systems
+* [Extractors](https://github.com/broadinstitute/monster-extractors) - Tools / services for mechanically transforming external metadata into Beam-friendly JSON
 * [GDR Ingest](https://github.com/broadinstitute/gdr-ingest) - Initial experiments at ingesting ENCODE data (archived)
 * [Kafka Deploy](https://github.com/broadinstitute/emerald-kubernetes-kafka) - Initial experiments at managing Kafka and Zookeeper in Kubernetes (archived)
 
