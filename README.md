@@ -18,7 +18,6 @@ New to the team? [Start here](./getting-started/README.md).
 ## GitHub Teams
 * [DSP Monsters](https://github.com/orgs/broadinstitute/teams/dsp-monsters) - Team for repositories under the `broadinstitute` org
 * [Emerald Writers](https://github.com/orgs/DataBiosphere/teams/broademeraldwrite) - Team for repositories under the `DataBiosphere` org
-* [Broad Pipeline Developers](https://github.com/orgs/BICCN/teams/broad-pipeline-developers) - Team for repositories under the `BICCN` org
 
 ## Projects
 
@@ -51,15 +50,3 @@ Infrastructure for moving data into the [Jade Data Repository](https://github.co
 * [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest
 * [Storage Libs](https://github.com/broadinstitute/monster-storage-libs) - Utility libraries for I/O against external storage systems
 * [Extractors](https://github.com/broadinstitute/monster-extractors) - Tools / services for mechanically transforming external metadata into Beam-friendly JSON
-* [GDR Ingest](https://github.com/broadinstitute/gdr-ingest) - Initial experiments at ingesting ENCODE data (archived)
-* [Kafka Deploy](https://github.com/broadinstitute/emerald-kubernetes-kafka) - Initial experiments at managing Kafka and Zookeeper in Kubernetes (archived)
-
-### BRAIN Initiative
-Scientific pipelines and infrastructure for processing BRAIN data in [Terra](https://app.terra.bio).
-
-#### Documentation
-* [Google Docs](https://drive.google.com/drive/folders/1LnYdg2RwGJ84aVbFdLFjK9qrT-nKqcJu)
-
-#### GitHub repos
-* [CEMBA](https://github.com/biccn/cemba) - Analysis pipeline for single nucleus methylation data
-* [Terra Import Builder](https://github.com/BICCN/terra-import-builder) - Cloud function converting NeMO payloads into Terra import URLs
