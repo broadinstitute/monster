@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+declare -r GRAAL_VERSION=19.1.1
+declare -r GRAAL_URL=https://github.com/oracle/graal/releases/download/vm-${GRAAL_VERSION}/graalvm-ce-darwin-amd64-${GRAAL_VERSION}.tar.gz
+declare -r GRAAL_INSTALL=${HOME}/.graal
+declare -r GRAAL_LATEST=${GRAAL_INSTALL}/latest
+
+declare -r PROFILE=${HOME}/.bash_profile
+
+function download_release () {
+  local -r output=${GRAAL_INSTALL}/${GRAAL_VERSION}
+
+  if [ ! -d ${output} ]; then
+    1>&2 echo Downloading Graal VM version ${GRAAL_VERSION} to ${output}...
+    mkdir -p ${output}
+    curl -sL ${GRAAL_URL} | tar xzf - --directory ${output} --strip-components 1
+  fi
+
+  1>&2 echo Updating "'latest'" pointer to ${output}...
+  rm -f ${GRAAL_LATEST}
+  ln -sf ${output} ${GRAAL_LATEST}
+}
+
+function set_env () {
+  local -r var=$1 value=$2
+  local -ra export_command=(export ${var}=${value})
+  local -r export_def="${export_command[*]}"
+
+  if ! grep "${export_def}" ${PROFILE} > /dev/null; then
+    1>&2 echo Setting ${var} to "'${value}'"...
+    echo "${export_def}" >> ${PROFILE}
+    "${export_command[@]}"
+  fi
+}
+
+function main () {
+  download_release
+  set_env GRAALVM_HOME "${GRAAL_LATEST}/Contents/Home"
+  set_env JAVA_HOME '${GRAALVM_HOME}'
+  set_env PATH '${JAVA_HOME}/bin:$PATH'
+}
+
+main

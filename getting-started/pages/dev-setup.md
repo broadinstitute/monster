@@ -1,5 +1,13 @@
 # Dev Setup
 
+## Set up Java
+We use [Graal VM](https://www.graalvm.org/) in our service containers for its improved JIT optimizations.
+If you're running OS X, run [this script](../scripts/setup-graal) to install the VM locally and set it up
+on your path.
+
+If you aren't running OS X, it should be possible to manually perform the steps in the script. The download
+URL will be slightly different, but you should be able to find it in Graal's [GitHub release page](https://github.com/oracle/graal/releases).
+
 ## Install Tools
 If you're running OS X, run [this script](../scripts/install-tools) to install all the software we use for
 development. It isn't fully automated (a few steps require confirmation / entering a login), but
