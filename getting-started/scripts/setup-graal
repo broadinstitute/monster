@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-declare -r GRAAL_VERSION=19.1.1
+declare -r GRAAL_VERSION=19.2.0.1
 declare -r GRAAL_URL=https://github.com/oracle/graal/releases/download/vm-${GRAAL_VERSION}/graalvm-ce-darwin-amd64-${GRAAL_VERSION}.tar.gz
 declare -r GRAAL_INSTALL=${HOME}/.graal
 declare -r GRAAL_LATEST=${GRAAL_INSTALL}/latest

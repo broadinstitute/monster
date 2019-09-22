@@ -36,17 +36,24 @@ Linked Data definitions for the DSP Core Data Model, with:
 * [OLS Docker](https://github.com/broadinstitute/ols-docker) - Dockerization of EBI's Ontology Lookup Service, configured to use ontologies we care about
 
 ### Data Ingest
-Infrastructure for moving data into the [Jade Data Repository](https://github.com/databiosphere/jade-data-repo), including:
+Services for moving data into the [Jade Data Repository](https://github.com/databiosphere/jade-data-repo), including:
 * Bulk file transfer
 * ETL workflows for tabular data
-* Deployment infrastructure
+* Bulk ingest orchestration
 
 #### Documentation
 * [Google Docs](https://drive.google.com/drive/folders/1LjtBbMZs5-FqTGcRjw80ZBlHhfd_LT2z)
 
 #### GitHub repos
 * [Transporter](https://github.com/databiosphere/transporter) - Bulk file-transfer system
-* [Ingest Deploy](https://github.com/broadinstitute/dsp-ingest-deploy) - Terraform and Kubernetes configuration for deploying ingest components into GCP
 * [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest
-* [Storage Libs](https://github.com/broadinstitute/monster-storage-libs) - Utility libraries for I/O against external storage systems
 * [Extractors](https://github.com/broadinstitute/monster-extractors) - Tools / services for mechanically transforming external metadata into Beam-friendly JSON
+* [Ingester](https://github.com/broadinstitute/monster-ingester) - Service for orchestrating batch ingests into the Jade repo
+
+### Operations (dev and prod)
+Infrastructure, configuration, and shared code used to manage developing and deploying our services.
+
+### GitHub repos
+* [Ingest Deploy](https://github.com/broadinstitute/dsp-ingest-deploy) - Terraform and Kubernetes configuration for deploying ingest components into GCP
+* [Storage Libs](https://github.com/broadinstitute/monster-storage-libs) - Utility libraries for I/O against external storage systems
+* [sbt plugins](https://github.com/broadinstitute/monster-sbt-plugins) - Common build plugins used across Monster projects
