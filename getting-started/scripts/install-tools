@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-declare -ra HOMEBREW_REPOSITORIES=(
-  AdoptOpenJDK/openjdk
-)
+declare -ra HOMEBREW_REPOSITORIES=()
 
 declare -ra HOMEBREW_CASKS=(
-  # Java that won't sue us
-  adoptopenjdk8
   # Community Edition
   docker
   # Utility that can prevent your Mac from entering sleep mode
@@ -38,7 +34,6 @@ declare -ra HOMEBREW_FORMULAE=(
   watch
   wget
   # Dev services
-  kafka
   liquibase
   postgresql@9.6
   # Bash helpers
@@ -56,8 +51,6 @@ declare -ra HOMEBREW_FORMULAE=(
 
 declare -ra HOMEBREW_SERVICES=(
   postgresql@9.6
-  kafka
-  zookeeper
 )
 
 declare -r GCLOUD_INSTALL_LOCATION=${HOME}/.google-cloud-sdk

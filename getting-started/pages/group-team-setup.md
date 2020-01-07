@@ -15,11 +15,9 @@ Join these channels for sure:
 
 ### Tech Topics
 You might find these channels useful for tech discussions:
-* `#beam-dataflow`
 * `#kubernetes`
 * `#scala`
 * `#softeng`
-* `#terraform-ansible`
 
 ### Other Emerald Teams
 Join some or all of these to keep tabs on other groups in Data Eng:

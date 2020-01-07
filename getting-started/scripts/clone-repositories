@@ -3,14 +3,12 @@ set -euo pipefail
 
 declare -ra GITHUB_REPOS=(
   broadinstitute/dsp-data-models
-  broadinstitute/dsp-ingest-deploy
   broadinstitute/monster
   broadinstitute/monster-etl
   broadinstitute/monster-extractors
-  broadinstitute/monster-ingester
   broadinstitute/monster-sbt-plugins
-  broadinstitute/monster-storage-libs
-  DataBiosphere/transporter
+  broadinstitute/dsp-monster-core-infrastructure
+  DataBiosphere/clinvar-ingest
 )
 
 function test_ssh () {
