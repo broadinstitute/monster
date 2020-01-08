@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-declare -ra HOMEBREW_REPOSITORIES=()
-
 declare -ra HOMEBREW_CASKS=(
   # Community Edition
   docker
@@ -62,22 +60,20 @@ function check_osx () {
   fi
 }
 
-function install_homebrew () {
-  if ! which brew > /dev/null; then
-    1>&2 echo Installing XCode utils and Homebrew...
+function install_devtools () {
+  if ! xcode-select -p > /dev/null; then
+    1>&2 echo Installing XCode tools...
     xcode-select --install
-    /usr/bin/ruby -e \
-      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  else
-    brew update
   fi
 }
 
-function tap_homebrew_repos () {
-  1>&2 echo Tapping Homebrew repositories...
-  for repo in ${HOMEBREW_REPOSITORIES[@]}; do
-    HOMEBREW_NO_AUTO_UPDATE=1 brew tap ${repo}
-  done
+function install_homebrew () {
+  if ! which brew > /dev/null; then
+    1>&2 echo Installing Homebrew...
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    brew update
+  fi
 }
 
 function homebrew_install_or_upgrade () {
@@ -183,8 +179,8 @@ function log_in () {
 
 function main () {
   check_osx
+  install_devtools
   install_homebrew
-  tap_homebrew_repos
   install_homebrew_casks
   install_homebrew_fomulae
   rewrite_settings

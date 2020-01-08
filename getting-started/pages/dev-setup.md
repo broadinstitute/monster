@@ -15,21 +15,30 @@ it should grab everything you need for development work.
 
 If you aren't running OS X, I'm sorry.
 
-Other things to note:
-* After running the installation script, you'll need to manually start the
-  cask applications (OS X will ask you to verify that you trust the installations).
-* If you prefer to use Firefox over Chrome, make sure to install the
-  [ESR version](https://www.mozilla.org/en-US/firefox/organizations/all/?q=engli). BITS'
-  security scanners are generally lax about what users set up on their machines, but for
-  some reason they've decided to blacklist non-ESR FF.
+### Cask Apps
+The installation script will download a few OS X applications, but you'll need to manually
+start them. Use spotlight to find and launch:
+* `Docker.app`
+* `KeepingYouAwake.app`
+* `JetBrains Toolbox.app`
+* `Visual Studio Code.app`
 
-## IntelliJ
+### Logging In
+Once you've launched Docker, you can log in with your DockerHub credentials and cross-link to Google.
+Run [this script](../scripts/login) to walk through the steps. You'll be prompted to enter your credentials.
+
+### IntelliJ
 Once you've installed the JetBrains Toolbox, you can use it to install IntelliJ.
 1. Click the Toolbox's icon in the status bar (upper right-hand corner).
    ![Toolbox icon](./toolbox-icon.png)
 2. Find "IntelliJ IDEA Community" in the list of available IDEs, and click "Install".
 3. After the installation completes, open the app and work through the initial setup
    dialogs. When asked, make sure to select the "Scala" plugin for installation.
+
+### Firefox
+If you prefer to use Firefox over Chrome, make sure to install the
+[ESR version](https://www.mozilla.org/en-US/firefox/organizations/all/?q=engli). BITS' security scanners are
+generally lax about what users set up on their machines, but for some reason they've decided to blacklist non-ESR FF.
 
 ## Set up Vault
 [Vault](https://www.vaultproject.io/) is our preferred solution for securely storing / sharing
