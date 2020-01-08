@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+function main () {
+  1>&2 echo Logging into DockerHub...
+  docker login
+
+  if ! grep "$(whoami)" <(gcloud auth list 2>/dev/null) > /dev/null; then
+    1>&2 echo Logging into Google...
+    1>&2 echo When asked, choose "'broad-dsp-monster-dev'" as your default project
+    1>&2 echo and "'us-central1-c'" as your default compute zone.
+    gcloud init
+  fi
+
+  if ! grep gcloud ${HOME}/.docker/config.json > /dev/null; then
+    1>&2 echo Connecting Google to Docker...
+    gcloud auth configure-docker
+  fi
+}
+
+main
