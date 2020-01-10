@@ -75,11 +75,9 @@ Within the command center, the module initializes:
 Within each processing project, the module initializes:
 1. GCP APIs required to run processing apps/services (i.e. Dataflow)
 2. A Compute Engine network configured to access the public internet
-3. A GKE cluster with one static node pool, and
-   [node auto-provisioning](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning)
-   enabled
+3. A GKE cluster with one static node pool and one auto-scaling pool
    * The static node pool is only large enough to run GKE's pre-loaded system pods
-   * Auto-provisioning is configured to set taints on provisioned nodes, preventing
+   * The auto-scaled pool is configured to set taints on provisioned nodes, preventing
      system pods from migrating onto the generated machines
 4. GCS buckets for storing project-specific artifacts and data
 5. Any IAM service accounts needed for authenticating with GCP / other Google systems
