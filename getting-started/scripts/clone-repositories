@@ -9,6 +9,8 @@ declare -ra GITHUB_REPOS=(
   broadinstitute/monster-sbt-plugins
   broadinstitute/dsp-monster-core-infrastructure
   DataBiosphere/clinvar-ingest
+  DataBiosphere/encode-ingest
+  DataBiosphere/dog-aging-ingest
 )
 
 function test_ssh () {

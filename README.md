@@ -39,6 +39,8 @@ Pipelines for moving data into the [Jade Data Repository](https://github.com/dat
 
 #### GitHub repos
 * [ClinVar](https://github.com/DataBiosphere/clinvar-ingest) - ETL pipeline for the ClinVar dataset
+* [ENCODE](https://github.com/DataBiosphere/encode-ingest) - ETL pipeline for the ENCODE dataset
+* [Dog Aging](https://github.com/DataBiosphere/dog-aging-ingest) - ETL pipeline for the Dog Aging Project dataset
 
 ### Operations
 Infrastructure, configuration, and shared code used to manage developing and deploying our services.
