@@ -4,7 +4,7 @@ A 100%-not-comprehensive list of resources useful for work on Monster.
 ## Monster
 * [DSP Core Data Model site](https://broadinstitute.atlassian.net/wiki/spaces/DSPCDM/overview)
 * [FAIR CoP site](https://broadinstitute.atlassian.net/wiki/spaces/FairCoP/overview)
-* [Tech stack documentation](../../tech-docs/stack/README.md)
+* [Technical documentation](../../tech-docs/README.md)
 
 ## Science / Data
 * [Emerald Term / Abbreviation Glossary](https://broadinstitute.atlassian.net/wiki/spaces/DSDEGP/pages/475332729/What+does+this+scientific+term+or+abbreviation+mean)
