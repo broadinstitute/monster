@@ -47,6 +47,7 @@ Infrastructure, configuration, and shared code used to manage developing and dep
 
 ### GitHub repos
 * [sbt plugins](https://github.com/broadinstitute/monster-sbt-plugins) - Common build plugins used across Monster projects
+* [Helm charts](https://github.com/broadinstitute/monster-helm) - Custom Helm charts for pieces of Monster infrastructure
 * [Core infrastructure](https://github.com/broadinstitute/dsp-monster-core-infrastructure) - Terraform modules and Helm
   release definitions for Monster's GCP environments
 
