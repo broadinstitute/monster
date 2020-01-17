@@ -163,8 +163,8 @@ function install_gcloud_sdk () {
 }
 
 function log_in () {
-  # Removing exisitng docker configs - unable to run the login command until this is done
-  1>&2 echo Removing exisitng docker configs...
+  # Removing existing docker configs - unable to run the login command until this is done
+  1>&2 echo Removing existing docker configs...
   rm -rf ~/.docker
   1>&2 echo Logging into DockerHub...
   docker login
