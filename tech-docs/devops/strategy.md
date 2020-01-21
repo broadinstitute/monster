@@ -4,7 +4,7 @@ and see reality has drifted away from what's described, please update the docs!
 
 ## Environments
 Monster maintains two environments: dev and prod. Infrastructure-as-code definitions for
-both environments are tracked in the same [GitHub repository](https://github.com/broadinstitute/dsp-monster-core-infrastructure/).
+both environments are tracked in the same [GitHub repository](https://github.com/broadinstitute/monster-deploy).
 Each environment spans multiple Google projects and GKE clusters.
 
 ### Dev vs. prod
