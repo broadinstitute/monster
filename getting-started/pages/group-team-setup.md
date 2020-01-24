@@ -102,6 +102,7 @@ Once you have an account, follow these steps to set up local credentials:
    /bin/cat <<-EOF > ~/.config/aws/env
    export AWS_ACCESS_KEY_ID=<your-key-id>
    export AWS_SECRET_ACCESS_KEY=<your-secret>
+   export AWS_REGION=<your-aws-region>
    EOF
 
    # Load configs into your profile.
