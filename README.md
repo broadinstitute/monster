@@ -13,6 +13,8 @@ New to the team? [Start here](./getting-started/README.md).
 | Jeff Korte | Product Owner | @JeffKorte |
 | Kathy Reinold | Data Modeler | @kreinold |
 | Raaid Arshad | Software Engineer | @raaidbroad |
+| Quazi Hoque | Software Engineer | @quazi-broad |
+| Sarah Wessel | Software Engineer Co-op | @snwessel |
 
 ## GitHub Teams
 * [DSP Monsters](https://github.com/orgs/broadinstitute/teams/dsp-monsters) - Team for repositories under the `broadinstitute` org
