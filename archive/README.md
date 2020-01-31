@@ -25,6 +25,8 @@ iterations of tracking configs while figuring out what works for us.
 ### GitHub repos
 * [Monster Terraform](https://github.com/broadinstitute/terraform-monster) - Initial Terraform resources for a static Monster architecture, archived
 * [Kafka Deploy](https://github.com/broadinstitute/emerald-kubernetes-kafka) - Initial experiments at managing Kafka and Zookeeper in Kubernetes, archived
+* [Ingest Deploy](https://github.com/broadinstitute/dsp-ingest-deploy) - Terraform and Kubernetes configuration for deploying ingest components into GCP,
+  based on the now-abandoned [dsp-k8s-deploy](https://github.com/broadinstitute/dsp-k8s-deploy)
 
 ## Ontology Service
 We explored the possibility of running EBI's ontology service using our data model.
@@ -39,3 +41,4 @@ pipelines using common command-line tools.
 
 ### GitHub repos
 * [Ingester](https://github.com/broadinstitute/monster-ingester) - Service for orchestrating batch ingests into the Jade repo
+* [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest

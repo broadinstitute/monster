@@ -5,8 +5,7 @@ declare -ra GITHUB_REPOS=(
   broadinstitute/dsp-data-models
   broadinstitute/monster
   broadinstitute/monster-helm
-  broadinstitute/monster-etl
-  broadinstitute/monster-extractors
+  broadinstitute/monster-xml-to-json-list
   broadinstitute/monster-sbt-plugins
   broadinstitute/monster-deploy
   DataBiosphere/clinvar-ingest

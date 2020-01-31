@@ -43,6 +43,8 @@ Pipelines for moving data into the [Jade Data Repository](https://github.com/dat
 * [ClinVar](https://github.com/DataBiosphere/clinvar-ingest) - ETL pipeline for the ClinVar dataset
 * [ENCODE](https://github.com/DataBiosphere/encode-ingest) - ETL pipeline for the ENCODE dataset
 * [Dog Aging](https://github.com/DataBiosphere/dog-aging-ingest) - ETL pipeline for the Dog Aging Project dataset
+* [XML-to-JSON-list](https://github.com/broadinstitute/monster-xml-to-json-list) - Command-line tool for mechanical
+  conversion of XML into Beam-friendly JSON
 
 ### Operations
 Infrastructure, configuration, and shared code used to manage developing and deploying our services.
@@ -63,8 +65,4 @@ pipelines using common command-line tools.
 
 #### GitHub repos
 * [Transporter](https://github.com/databiosphere/transporter) - Bulk file-transfer system
-* [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest
-* [Extractors](https://github.com/broadinstitute/monster-extractors) - Tools / services for mechanically transforming external metadata into Beam-friendly JSON
-* [Ingest Deploy](https://github.com/broadinstitute/dsp-ingest-deploy) - Terraform and Kubernetes configuration for deploying ingest components into GCP,
-  based on the now-abandoned [dsp-k8s-deploy](https://github.com/broadinstitute/dsp-k8s-deploy)
 * [Storage Libs](https://github.com/broadinstitute/monster-storage-libs) - Utility libraries for I/O against external storage systems
