@@ -43,8 +43,15 @@ Pipelines for moving data into the [Jade Data Repository](https://github.com/dat
 * [ClinVar](https://github.com/DataBiosphere/clinvar-ingest) - ETL pipeline for the ClinVar dataset
 * [ENCODE](https://github.com/DataBiosphere/encode-ingest) - ETL pipeline for the ENCODE dataset
 * [Dog Aging](https://github.com/DataBiosphere/dog-aging-ingest) - ETL pipeline for the Dog Aging Project dataset
+
+### Ingest Utilities
+Tools and libraries used to support the top-level ingest pipelines.
+
+#### GitHub repos
 * [XML-to-JSON-list](https://github.com/broadinstitute/monster-xml-to-json-list) - Command-line tool for mechanical
   conversion of XML into Beam-friendly JSON
+* [Scio utils](https://github.com/broadinstitute/monster-scio-utils) - Common utilities shared across ETL pipelines
+  written in Scio
 
 ### Operations
 Infrastructure, configuration, and shared code used to manage developing and deploying our services.
