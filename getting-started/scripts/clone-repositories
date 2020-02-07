@@ -2,7 +2,6 @@
 set -euo pipefail
 
 declare -ra GITHUB_REPOS=(
-  broadinstitute/dsp-data-models
   broadinstitute/monster
   broadinstitute/monster-helm
   broadinstitute/monster-xml-to-json-list
@@ -12,6 +11,7 @@ declare -ra GITHUB_REPOS=(
   DataBiosphere/clinvar-ingest
   DataBiosphere/encode-ingest
   DataBiosphere/dog-aging-ingest
+  DataBiosphere/dsp-core-data-model
 )
 
 function test_ssh () {
