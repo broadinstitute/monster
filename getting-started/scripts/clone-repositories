@@ -11,7 +11,7 @@ declare -ra GITHUB_REPOS=(
   DataBiosphere/clinvar-ingest
   DataBiosphere/encode-ingest
   DataBiosphere/dog-aging-ingest
-  DataBiosphere/dsp-core-data-model
+  DataBiosphere/terra-core-data-model
 )
 
 function test_ssh () {
