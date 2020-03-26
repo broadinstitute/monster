@@ -23,7 +23,7 @@ New to the team? [Start here](./getting-started/README.md).
 ## Projects
 
 ### Data Modeling
-Linked Data definitions for the DSP Core Data Model, with extensions for unmodeled datasets.
+Linked Data definitions for the Terra Core Data Model, with extensions for unmodeled datasets.
 
 #### Documentation
 * [Google Docs](https://drive.google.com/drive/folders/1n8TP4Q_4n2pCysjQz2Hkn2kpHGEILLCj)
@@ -31,7 +31,7 @@ Linked Data definitions for the DSP Core Data Model, with extensions for unmodel
 * [Confluence - FAIR Community of Practice](https://broadinstitute.atlassian.net/wiki/spaces/FairCoP/overview)
 
 #### GitHub repos
-* [BroadCore Data Model](https://github.com/DataBiosphere/broad-core-data-model) - Data Model definitions and examples
+* [TerraCore Data Model](https://github.com/DataBiosphere/terra-core-data-model) - Data Model definitions and examples
 
 ### Data Ingest
 Pipelines for moving data into the [Jade Data Repository](https://github.com/databiosphere/jade-data-repo).
