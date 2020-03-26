@@ -31,7 +31,7 @@ Linked Data definitions for the DSP Core Data Model, with extensions for unmodel
 * [Confluence - FAIR Community of Practice](https://broadinstitute.atlassian.net/wiki/spaces/FairCoP/overview)
 
 #### GitHub repos
-* [DSPCore Data Model](https://github.com/DataBiosphere/dsp-core-data-model) - Data Model definitions and examples
+* [BroadCore Data Model](https://github.com/DataBiosphere/broad-core-data-model) - Data Model definitions and examples
 
 ### Data Ingest
 Pipelines for moving data into the [Jade Data Repository](https://github.com/databiosphere/jade-data-repo).
