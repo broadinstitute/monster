@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-declare -r GRAAL_VERSION=19.2.1
-declare -r GRAAL_URL=https://github.com/oracle/graal/releases/download/vm-${GRAAL_VERSION}/graalvm-ce-darwin-amd64-${GRAAL_VERSION}.tar.gz
+declare -r GRAAL_VERSION=20.0.0
+declare -r GRAAL_URL=https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${GRAAL_VERSION}/graalvm-ce-java8-darwin-amd64-${GRAAL_VERSION}.tar.gz
 declare -r GRAAL_INSTALL=${HOME}/.graal
 declare -r GRAAL_LATEST=${GRAAL_INSTALL}/latest
 
