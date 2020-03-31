@@ -36,7 +36,8 @@ We use the [Scio](./tools.md#scio) library to write pipelines against Beam's Jav
 Argo is a workflow engine for running complex sequences of jobs on [Kubernetes](#kubernetes).
 
 ### Use case
-We use Argo to handle "weird" processing that doesn't fit nicely into Dataflow's
+We use Argo both as the main scheduler for our ingest pipelines and as
+the executor for "weird" processing that doesn't fit nicely into Dataflow's
 structured format. For example:
 * Running a series of command-line tools written in different languages
 * Interacting with data outside of Google Cloud
@@ -68,35 +69,6 @@ container that's accessible to the Kubernetes cluster running the workflow.
 * [Detailed workflow examples](https://argoproj.github.io/docs/argo/examples/readme.html)
 * [Kubernetes CRD documentation](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/)
 * [Python client for Argo](https://github.com/CermakM/argo-client-python)
-
-## Airflow
-Airflow is a batch ETL orchestration platform.
-
-### Use case
-We don't currently use Airflow, _but_ we intend to use it as the main scheduler and
-entry-point for each of our ingest pipelines. It will do things like:
-* Set up / tear down GCP infrastructure that only needs to exist during pipeline execution
-* Launch and monitor [Dataflow](#dataflow) pipelines
-* Launch and monitor [Argo](#argo) workflows
-* Launch and monitor [Jade](#jade-repository) ingest jobs
-* Run simple ETL tools to translate outputs of one system into the inputs for another
-
-### Why Airflow?
-Airflow is a top-level Apache project with significant market share. Google offers
-a fully-managed version of it called Composer, and there are many [Helm](./tools.md#helm)
-charts for self-managed installations of the platform on [Kubernetes](#kubernetes). The
-platform has baked-in support for interacting with GCP services, and comes packaged with
-a monitoring UI. Both the back-end and front-end can be extended with user-defined functionality.
-
-### Related language(s)
-Airflow DAGs (and the system itself) are written in [Python](./languages.md#python). User-
-defined extensions are installed by dropping new code into a location where the system's
-runtime can access / discover it.
-
-### Useful links
-* [Initial investigation notes](https://docs.google.com/document/d/1hIUJtJ-y4DsTuRGpT63DVIz_sTUCXKAenUztDioHdIc/edit?usp=sharing)
-* [Airflow documentation](https://airflow.apache.org/docs/stable/)
-* [Airflow guides from Astronomer](https://www.astronomer.io/guides/)
 
 ## Jade Repository
 The Jade Repository is the main product of our sibling team, and the "sink" for all of

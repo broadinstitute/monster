@@ -64,7 +64,6 @@ so we often end up using Python in order to use an existing ETL system or tool.
 
 ### Where do we use Python?
 1. Ad-hoc scripts embedded within [Argo](./systems.md#argo) workflows.
-2. (Future) [Airflow](./systems.md#airflow) DAG definitions.
 
 ### Useful links
 * [Official Python tutorial](https://docs.python.org/3/tutorial/index.html)

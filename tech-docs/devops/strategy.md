@@ -92,8 +92,8 @@ We initialize namespaces in GKE after baseline infrastructure is in place.
 
 Within the command center cluster, we create namespaces for:
 * The Flux CD `helm-operator`
-* Airflow
-* The Argo UI
+* The "secrets manager"
+* The Argo Server
 * Each processing project (to host Argo controllers)
 
 We create a single `argo` namespace in each processing cluster.
@@ -104,12 +104,11 @@ a single Helm chart into every GKE cluster.
 
 The command center's chart installs into the Flux CD namespace, creating:
 1. The Flux CD `helm-operator` deployment
-2. A `HelmRelease` CRD for Airflow, targeting its namespace
-3. A `HelmRelease` CRD for the Argo UI, targeting its namespace
-4. A `HelmRelease` CRD per processing project, targeting their respective namespaces to install:
+2. A `HelmRelease` CRD for the Argo UI, targeting its namespace
+3. A `HelmRelease` CRD per processing project, targeting their respective namespaces to install:
    * An Argo workflow controller
    * Any project-specific GKE resources
-5. Any pod security policies and RBAC rules required to get all the components above running
+4. Any pod security policies and RBAC rules required to get all the components above running
 
 The specific versions tracked by each `HelmRelease` CRD are template-ized as values in the top-
 level Helm chart, allowing us to use the same chart for environments of varying stability.
