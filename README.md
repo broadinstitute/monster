@@ -61,6 +61,7 @@ Infrastructure, configuration, and shared code used to manage developing and dep
 * [Helm charts](https://github.com/broadinstitute/monster-helm) - Custom Helm charts for pieces of Monster infrastructure
 * [Core deployments](https://github.com/broadinstitute/monster-deploy) - Terraform modules, Helm releases, and deploy scripts
   for Monster's GCP environments
+* [setup-chart-releaser](https://github.com/broadinstitute/setup-chart-releaser) - GitHub Action to install [Chart Releaser](https://github.com/helm/chart-releaser)
 
 ## Semi-Archived
 The repositories in this section are still being used, but we're trying to move away from them.
