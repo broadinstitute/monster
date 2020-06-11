@@ -42,3 +42,5 @@ pipelines using common command-line tools.
 ### GitHub repos
 * [Ingester](https://github.com/broadinstitute/monster-ingester) - Service for orchestrating batch ingests into the Jade repo
 * [Monster ETL](https://github.com/broadinstitute/monster-etl) - Apache Beam workflows for ingest
+* [sbt plugins](https://github.com/broadinstitute/monster-sbt-plugins) - Common sbt plugins for our projects (merged with monster-scio-utils to become ingest-utils)
+* [Scio utils](https://github.com/broadinstitute/monster-scio-utils) - Common Scio functionality for our pipelines (merged with monster-sbt-plugins to become ingest-utils)

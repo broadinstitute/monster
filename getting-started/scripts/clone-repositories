@@ -5,10 +5,8 @@ declare -ra GITHUB_REPOS=(
   broadinstitute/monster
   broadinstitute/monster-helm
   broadinstitute/monster-xml-to-json-list
-  broadinstitute/monster-sbt-plugins
   broadinstitute/monster-deploy
-  broadinstitute/monster-scio-utils
-  broadinstitute/setup-chart-releaser
+  DataBiosphere/ingest-utils
   DataBiosphere/clinvar-ingest
   DataBiosphere/encode-ingest
   DataBiosphere/dog-aging-ingest

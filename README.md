@@ -48,16 +48,14 @@ Pipelines for moving data into the [Jade Data Repository](https://github.com/dat
 Tools and libraries used to support the top-level ingest pipelines.
 
 #### GitHub repos
+* [Base utilities](https://github.com/DataBiosphere/ingest-utils) - Common utilities shared across our batch ETL projects
 * [XML-to-JSON-list](https://github.com/broadinstitute/monster-xml-to-json-list) - Command-line tool for mechanical
   conversion of XML into Beam-friendly JSON
-* [Scio utils](https://github.com/broadinstitute/monster-scio-utils) - Common utilities shared across ETL pipelines
-  written in Scio
 
 ### Operations
 Infrastructure, configuration, and shared code used to manage developing and deploying our services.
 
 ### GitHub repos
-* [sbt plugins](https://github.com/broadinstitute/monster-sbt-plugins) - Common build plugins used across Monster projects
 * [Helm charts](https://github.com/broadinstitute/monster-helm) - Custom Helm charts for pieces of Monster infrastructure
 * [Core deployments](https://github.com/broadinstitute/monster-deploy) - Terraform modules, Helm releases, and deploy scripts
   for Monster's GCP environments
