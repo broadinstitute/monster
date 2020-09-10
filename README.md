@@ -8,13 +8,11 @@ New to the team? [Start here](./getting-started/README.md).
 
 | Name | Role | GitHub |
 | --- | --- | --- |
-| Dan Moran | Tech Lead | @danxmoran |
-| Emily Munro-Ludders | Scrum Master | @emunrolu |
+| Martina Goodlin | Scrum Master | NA |
 | Jeff Korte | Product Owner | @JeffKorte |
 | Kathy Reinold | Data Modeler | @kreinold |
 | Raaid Arshad | Software Engineer | @raaidbroad |
 | Quazi Hoque | Software Engineer | @quazi-broad |
-| Sarah Wessel | Software Engineer Co-op | @snwessel |
 
 ## GitHub Teams
 * [DSP Monsters](https://github.com/orgs/broadinstitute/teams/dsp-monsters) - Team for repositories under the `broadinstitute` org
@@ -43,6 +41,7 @@ Pipelines for moving data into the [Jade Data Repository](https://github.com/dat
 * [ClinVar](https://github.com/DataBiosphere/clinvar-ingest) - ETL pipeline for the ClinVar dataset
 * [ENCODE](https://github.com/DataBiosphere/encode-ingest) - ETL pipeline for the ENCODE dataset
 * [Dog Aging](https://github.com/DataBiosphere/dog-aging-ingest) - ETL pipeline for the Dog Aging Project dataset
+* [HCA](https://github.com/DataBiosphere/hca-ingest) - ETL pipeline for the HCA
 
 ### Ingest Utilities
 Tools and libraries used to support the top-level ingest pipelines.
