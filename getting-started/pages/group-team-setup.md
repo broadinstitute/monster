@@ -46,12 +46,12 @@ Have the Tech Lead email the current Broad admins to get you added to the org, t
 member of these teams:
 * [Emerald Writers](https://github.com/orgs/DataBiosphere/teams/broademeraldwrite)
 
-## DockerHub
+## DockerHub (Flagged as outdated, we primarily use GCR)
 We host containers for our open-source services in DockerHub. Go [here](https://hub.docker.com/)
 to set up an account. Once it's set up, ask the Tech Lead to get you added to the `broadinstitute`
 organization and DSDE team within.
 
-## Quay
+## Quay (Flagged as outdated, we never use this tool)
 Our workloads can cause scalability issues in DockerHub by concurrently pulling a large
 number of images. To avoid hitting this problem, we sometimes choose to host at-risk images
 (usually containing command-line programs for scientific workflows) in [Quay](https://quay.io).
@@ -83,7 +83,7 @@ so you can interact with the systems directly when needed.
    * [Data Repository Stewards](https://bvdp-saturn-dev.appspot.com/#groups/JadeStewards-dev)
    * [Data Repository Custodians](https://bvdp-saturn-dev.appspot.com/#groups/JadeCustodians-dev)
 
-## AWS
+## AWS (Flagged as not needed to start off)
 We maintain a space in AWS for testing our file-transfer systems. The need is uncommon
 enough across DSP that DevOps hasn't set up an automated process for acquiring an account,
 so work with the Tech Lead to get into the system.
