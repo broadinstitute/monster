@@ -46,7 +46,7 @@ Have the Tech Lead email the current Broad admins to get you added to the org, t
 member of these teams:
 * [Emerald Writers](https://github.com/orgs/DataBiosphere/teams/broademeraldwrite)
 
-## DockerHub (Flagged as outdated, we primarily use GCR)
+## DockerHub (Flagged as possibly outdated, I'm unsure of this one)
 We host containers for our open-source services in DockerHub. Go [here](https://hub.docker.com/)
 to set up an account. Once it's set up, ask the Tech Lead to get you added to the `broadinstitute`
 organization and DSDE team within.
