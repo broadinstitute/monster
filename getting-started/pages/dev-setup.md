@@ -19,7 +19,6 @@ If you aren't running OS X, I'm sorry.
 The installation script will download a few OS X applications, but you'll need to manually
 start them. Use spotlight to find and launch:
 * `Docker.app`
-* `KeepingYouAwake.app`
 * `JetBrains Toolbox.app`
 * `Visual Studio Code.app`
 
