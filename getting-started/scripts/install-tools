@@ -4,8 +4,6 @@ set -euo pipefail
 declare -ra HOMEBREW_CASKS=(
   # Community Edition
   docker
-  # Utility that can prevent your Mac from entering sleep mode
-  keepingyouawake
   # Installation manager for Jetbrains IDEs
   jetbrains-toolbox
   # Lightweight editor for when a full IDE is overkill
