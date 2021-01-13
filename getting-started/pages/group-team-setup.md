@@ -42,9 +42,7 @@ This org hosts repositories that we feel aren't necessarily tied to Broad infras
 or use-cases. Multiple other institutes / companies are included in the org, so only a few
 Broad members have the power to add other users.
 
-Have the Tech Lead email the current Broad admins to get you added to the org, then made a
-member of these teams:
-* [Emerald Writers](https://github.com/orgs/DataBiosphere/teams/broademeraldwrite)
+Go to the #github channel and click on the "Join DataBiosphere" shortcut in that channel.
 
 ## DockerHub (Flagged as possibly outdated, I'm unsure of this one)
 We host containers for our open-source services in DockerHub. Go [here](https://hub.docker.com/)
