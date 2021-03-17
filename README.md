@@ -13,10 +13,13 @@ New to the team? [Start here](./getting-started/README.md).
 | Kathy Reinold | Data Modeler | @kreinold |
 | Raaid Arshad | Software Engineer | @raaidbroad |
 | Quazi Hoque | Software Engineer | @quazi-broad |
+| Steve Pletcher | Software Engineer | @ThePletch |
+| Drew Herbst | Tech Lead | @aherbst-broad | 
+
 
 ## GitHub Teams
 * [DSP Monsters](https://github.com/orgs/broadinstitute/teams/dsp-monsters) - Team for repositories under the `broadinstitute` org
-* [Emerald Writers](https://github.com/orgs/DataBiosphere/teams/broademeraldwrite) - Team for repositories under the `DataBiosphere` org
+* [Monster](https://github.com/orgs/DataBiosphere/teams/monster) - Team for repositories under the `DataBiosphere` org
 
 ## Projects
 
