@@ -10,10 +10,8 @@ New to the team? [Start here](./getting-started/README.md).
 | --- | --- | --- |
 | Martina Goodlin | Scrum Master | NA |
 | Jeff Korte | Product Owner | @JeffKorte |
-| Kathy Reinold | Data Modeler | @kreinold |
 | Raaid Arshad | Software Engineer | @raaidbroad |
 | Quazi Hoque | Software Engineer | @quazi-broad |
-| Steve Pletcher | Software Engineer | @ThePletch |
 | Drew Herbst | Tech Lead | @aherbst-broad | 
 
 
