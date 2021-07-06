@@ -8,9 +8,7 @@ New to the team? [Start here](./getting-started/README.md).
 
 | Name | Role | GitHub |
 | --- | --- | --- |
-| Martina Goodlin | Scrum Master | NA |
 | Jeff Korte | Product Owner | @JeffKorte |
-| Raaid Arshad | Software Engineer | @raaidbroad |
 | Quazi Hoque | Software Engineer | @quazi-broad |
 | Drew Herbst | Tech Lead | @aherbst-broad | 
 
